@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useState} from 'react'
 import Card  from './components/Card'
+import Pwd from './components/Pwd'
+
 
 function App() {
   const [color, setColor] = useState("olive")
   const [count, setCount] = useState(0)
+  
   const addValue = () => {
     if(count<20){
   setCount(count +1)
@@ -23,26 +26,25 @@ let myObj={
 let newArr=[1,2,3]
   return (
     <>
+    
     <div className='w-full h-screen duration-200' style={{backgroundColor:color}}>
-    <div className='flex mt-3 pb-5 pt-5'>
-      <div className='px-5'>
-        <button className='px-2 py-2 rounded-md bg-purple-700 outline-1' onClick={addValue}>
-          count add {count}
-        </button>
-        </div>
-        <div className='px-12'>
-        <button className='px-2 py-2 rounded-md bg-fuchsia-700 outline-1 'onClick={removeValue}>
-          count remove {count} 
-        </button>
-        </div>
-      </div>
-      <div className='flex'>
-    <div className=' px-4 flex-col'>
+    
+    <div className='pb-3'></div>
+      <Pwd  /> 
+      <div className='flex gap-20 '>
+    <div className=' px-8 flex-col'>
     <Card userName='Kiran' btnText='Click me' />
     </div>
-    <div className='px-4 flex-col'>
+    <div className='flex-col'>
       <Card userName='Devraj' btnText='Vist Me' someArr={newArr}/>
     </div>
+    <div className=' flex-col'>
+    <Card userName='Kiran' btnText='Click me' />
+    </div>
+    <div className='flex-col'>
+      <Card userName='Devraj' btnText='Vist Me' someArr={newArr}/>
+    </div>
+    
     </div>
     <div className='fixed flex flex-wrap justify-center bottom-14 inset-x-0'>
       <div className='flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-full'>
@@ -54,8 +56,20 @@ let newArr=[1,2,3]
       <button className='outline-none px-4 rounded-full text-white' style={{backgroundColor:'black'}} onClick={() => setColor('black')}>Black</button> 
       <button className='outline-double px-4 rounded-full text-black' style={{backgroundColor:'white'}} onClick={() => setColor('white')}>White</button> 
          </div>
-         
     </div>
+
+    <div className='flex mt-3 pb-5 pt-5 '>
+      <div className='mx-auto'>
+        <button className='px-2 py-2 rounded-md bg-cyan-500 outline-1' onClick={addValue}>
+          count add {count} &larr;
+        </button>
+        </div>
+        <div className='mx-auto'>
+        <button className='px-2 py-2 rounded-md bg-cyan-500  outline-1 'onClick={removeValue}>
+          count remove {count}   &larr;
+        </button>
+        </div>
+      </div>
     </div> 
 
   
